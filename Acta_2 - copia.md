@@ -32,10 +32,27 @@ En esta reunión se han puesto en común y se han revisado todas las tareas a en
 ## 3. Explicación de cada una de las ordenes "curl"  
 Se ha realizado la siguiente secuencia de órdenes para interactuar con CentroEducativo v2.0 (leer+modificar+leer): 
 
-  - Login del usuario:  
-   `KEY=$(curl -s --data '{"dni":"23456733H","password":"123456"}' 
--X POST -H "content-type: application/json" http://dew-cgarmon1-2324.dsicv.upv.es:9090/CentroEducativo/login 
--c cucu -b cucu)
+  - Login del usuario: Se ha guardado en la variable KEY la clave otorgada como resultado de esta orden, de esa forma podrá pasarse como parámetro a las ordenes siguientes que interactuen con CentroEducativo, "cucu" representa el fichero donde se guardarán las cookies. Tanto la KEY como el fichero con las cookies son necesarios para poder "mantener la sesión" e interacturar con CentroEducativo. Los parámetros necesarios se indican en formato JSON.
+     
+     `KEY=$(curl -s --data '{"dni":"23456733H","password":"123456"}' 
+    -X POST -H "content-type: application/json" http://dew-cgarmon1-2324.dsicv.upv.es:9090/CentroEducativo/login 
+    -c cucu -b cucu)
+    `
+  - Leer todos los alumnos de CentroEducativo: Se pasa la clave necesaria mediante la variable KEY.
+    
+    `curl -s -X GET 'http://dew-cgarmon1-2324.dsicv.upv.es:9090/CentroEducativo/alumnos?key='$KEY -H "accept: application/json" -c cucu -b cucu`
+
+  - Modificar un alumno de CentroEducativo: Los parámetros necesarios se indican en formato JSON. La modificación puede realizarse mediante el método POST o mediante el método PUT. Aunque le método PUT es el que mejor representa una operación de actualización hoy en dia se encuentra en desuso. A continuación se muestran ambas opciones:
+    
+    `curl -s  --data '{“apellidos”:”Fernándex”, "dni":"222222222H",”nombre”:”Maria”, "password":"123456"}' -X POST -H”content-type: application/json”
+http://dew-cgarmon1-2324.dsicv.upv.es:9090/CentroEducativo/alumnos?key='$KEY\ -c cucu -b cucu`
+
+    `curl -s --data '{“apellidos”:”Fernándex”, "dni":"222222222H",”nombre”:”Maria”, "password":"123456"}' -X PUT -H "content-type: application/json" http://dew-cgarmon1-2324.dsicv.upv.es:9090/CentroEducativo/alumnos?key='$KEY -c cucu -b cucu`
+
+  - Lectura de la información del alumno modificado: Por último, obtenemos unicamente el alumno sobre el cual hemos realizado la modificación. Los parámetros necesarios se indican en formato JSON.
+
+     `curl -s --data '{"dni":"222222222H"}' -X GET 'http://dew-cgarmon1-2324.dsicv.upv.es:9090/CentroEducativo/alumnos/?key='$KEY -H "accept: application/json" -c cucu -b cucu
+`
 `
 
 
