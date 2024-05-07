@@ -38,9 +38,9 @@ Lo primero que obtiene el cliente es una página HTML en la que aparecen los enl
   - Al clicar en el enlace "Log2", tras realizar las mismas acciones que en los formularios anteriores, el servlet obtendrá la ruta del archivo de registro de un parámetro de inicialización del contexto llamado "logFile" empleando web.xml.
 
 ## 2. Documentación que pudiera necesitar un usuario de la aplicación resultante (consulta de logs, ubicación de ficheros generados...)  
-Todos los logs se encuentran en la carpeta ![image](https://github.com/hikigaya5/proyectoDEW/assets/132065179/abe9f3bb-8092-4c1d-8ae3-f9ffe509a155)
-
-
+A continuación se muestra la ubicación de los logs dentro del proyecto  
+![image](https://github.com/hikigaya5/proyectoDEW/assets/132065179/abe9f3bb-8092-4c1d-8ae3-f9ffe509a155)  
+Por último, indicar que el archivo de registro en el que se escriben los datos al completar el formulario del Log1 se encuentran en /home/user/Documentos/resultado.txt
 
 ## 3. Explicación de cada una de las ordenes "curl"  
 Se ha realizado la siguiente secuencia de órdenes para interactuar con CentroEducativo v2.0 (leer+modificar+leer): 
