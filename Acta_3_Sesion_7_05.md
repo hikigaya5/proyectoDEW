@@ -31,7 +31,7 @@ El formulario deberá tener un elemento "form" tal que:
     
      <form action="/path/LogX" method="post">
     
-Además deberá contener los elementos necesarios para recoger la información que el usuario proporciona etiquetados como "usuario" y "pass".
+Además deberá contener los elementos necesarios para recoger la información que el usuario proporciona etiquetados como "usuario" y "pass".  
 Tras interactuar con el log0, el usuario recibirá una página HTML con los datos del formulario, la información del cliente (nombre de usuario y contraseña), la fecha actual, la URI y el método HTTP. Por otro lado, el log1, además de realizar las acciones llevadas a cabo por log0, también escribe los mismos datos en un archivo de registro ubicado en /home/user/Documentos/resultado.txt. Por último, al interactuar con log2, además de devolver la página HTML con los datos ya mencionados, este servlet obtiene la ruta del archivo de registro de un parámetro de inicialización del contexto llamado "logFile" empleando web.xml.
 
 ## 2. Documentación que pudiera necesitar un usuario de la aplicación resultante (consulta de logs, ubicación de ficheros generados...)  
