@@ -29,8 +29,7 @@ En esta reunión se han puesto en común y se han revisado todas las tareas a en
 Los servlets log0, log1 y log2 son componentes Java diseñados para manejar solicitudes HTTP y registrar información del cliente en un archivo de registro, están diseñados para interactuar con formularios HTML para capturar los datos del usuario y procesarlos. 
 El formulario deberá tener un elemento "form" tal que:
     
-     `form action="/path/LogX" method="post"
-    `
+     `<form action="/path/LogX" method="post">
     
 Además deberá contener los elementos necesarios para recoger la información que el usuario proporciona etiquetados como "usuario" y "pass".
 
