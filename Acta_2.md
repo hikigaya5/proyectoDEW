@@ -2,7 +2,7 @@
 
 ## Preámbulo
   FECHA: 30/05/2024  
-  IDENTIFICADOR DE GRUPO: Grupo 3ti12_g6 
+  IDENTIFICADOR DE GRUPO: Grupo 3ti12_g6  
   TIPO DE REUNIÓN: Videoconferencia por DISCORD  
   ASISTENCIA:  
     - Celia García Monforte  
