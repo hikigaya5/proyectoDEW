@@ -34,11 +34,14 @@ El formulario deberá tener un elemento "form" tal que:
 Además deberá contener los elementos necesarios para recoger la información que el usuario proporciona etiquetados como "usuario" y "pass".  
 Lo primero que obtiene el cliente es una página HTML en la que aparecen los enlaces a los formularios que comprueban cada Log. 
   - Al clicar en el enlace "Log0" aparece un formulario en el que deberá rellenar usuario y contraseña. Tras enviar el formulario aparecerá un HTML con la información del cliente (nombre de usuario y contraseña), la fecha actual, la URI y el método HTTP.
-  - Al clicar en el encade "Log1" aparece el mismo formulario que anteriormente que, además de realizar las acciones llevadas a cabo por log0, escribirça esos mismos datos en un archivo de registro ubicado en /home/user/Documentos/resultado.txt.
+  - Al clicar en el encade "Log1" aparece el mismo formulario que anteriormente que, además de realizar las acciones llevadas a cabo por log0, escribirá esos mismos datos en un archivo de registro. 
   - Al clicar en el enlace "Log2", tras realizar las mismas acciones que en los formularios anteriores, el servlet obtendrá la ruta del archivo de registro de un parámetro de inicialización del contexto llamado "logFile" empleando web.xml.
 
 ## 2. Documentación que pudiera necesitar un usuario de la aplicación resultante (consulta de logs, ubicación de ficheros generados...)  
-Información necesaria ya aportada en el apartado 1.
+Todos los logs se encuentran en la carpeta ![image](https://github.com/hikigaya5/proyectoDEW/assets/132065179/abe9f3bb-8092-4c1d-8ae3-f9ffe509a155)
+
+
+
 ## 3. Explicación de cada una de las ordenes "curl"  
 Se ha realizado la siguiente secuencia de órdenes para interactuar con CentroEducativo v2.0 (leer+modificar+leer): 
 
