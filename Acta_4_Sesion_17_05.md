@@ -1,7 +1,7 @@
 ## ACTA REUNIÓN 
 
 ## Preámbulo
-  FECHA: 22/05/2024  
+  FECHA: 17/05/2024  
   IDENTIFICADOR DE GRUPO: Grupo 3ti12_g6  
   TIPO DE REUNIÓN: Videoconferencia por DISCORD  
   ASISTENCIA:  
