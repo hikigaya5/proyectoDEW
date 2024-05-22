@@ -1,7 +1,7 @@
 ## ACTA REUNIÓN 
 
 ## Preámbulo
-  FECHA: 6/05/2024  
+  FECHA: 22/05/2024  
   IDENTIFICADOR DE GRUPO: Grupo 3ti12_g6  
   TIPO DE REUNIÓN: Videoconferencia por DISCORD  
   ASISTENCIA:  
@@ -16,57 +16,45 @@
 
 
 ## Resumen de la reunión  
-En esta reunión se han puesto en común y se han revisado todas las tareas a entregar en el Hito 1. A continuación se detallarán los aspectos a explicar sobre los entregables del Hito 1.
+En esta reunión se han puesto en común y se han revisado todas las tareas a entregar en el Hito 2. A continuación se detallarán los aspectos a explicar sobre los entregables del Hito 2.
   
 ## Puntos del acta
-1. Información sobre como utilizar los formularios que interactuarán con los servlets log0, log1, log2  
-2. Documentación que pudiera necesitar un usuario de la aplicación resultante (consulta de logs, ubicación de ficheros generados...)  
-3. Explicación de cada una de las órdenes "curl"
+1. Página de entrada y enlace a la operación
+2. Autenticación web
+3. Login con CentroEducativo y mantenimiento de la sesión (no es necesariamente un paso separado)
+4. Construcción y envío de las peticiones a CentroEducativo
+5. Interpretación de las respuestas de CentroEducativo
+6. Construcción y retorno de las páginas HTML de respuesta
+7. Identificación del servidor usado como prototipo
+8. Descripción del estado actual del grupo
 
+## 1. Página de entrada y enlace a la operación  
+La página de entrada a la aplicación Notas Online ha sido desarrollada con "Bootstrap 5", concretamente se ha utilizado el tema "Flatly" de Bootswatch.   
+Para poder hacer uso de este tema se importa en la cabecera del HTML como si de una hoja de estilo se tratara:  
 
+`<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/flatly/bootstrap.min.css" integrity="sha384-qF/QmIAj5ZaYFAeQcrQ6bfVMAh4zZlrGwTPY7T/M+iTTLJqJBJjwwnsE5Y0mV7QK" crossorigin="anonymous">`  
 
-## 1. Información sobre como utilizar los formularios que interactuarán con los servlets log0, log1, log2  
-Los servlets log0, log1 y log2 son componentes Java diseñados para manejar solicitudes HTTP y registrar información del cliente en un archivo de registro, están diseñados para interactuar con formularios HTML para capturar los datos del usuario y procesarlos. 
-El formulario deberá tener un elemento "form" tal que:
-    
-     <form action="/path/LogX" method="get">
-    
-Además deberá contener los elementos necesarios para recoger la información que el usuario proporciona etiquetados como "usuario" y "pass".  
-Lo primero que obtiene el cliente es una página HTML en la que aparecen los enlaces a los formularios que comprueban cada Log. 
-  - Al clicar en el enlace "Log0" aparece un formulario en el que deberá rellenar usuario y contraseña. Tras enviar el formulario aparecerá un HTML con la información del cliente (nombre de usuario y contraseña), la fecha actual, la URI y el método HTTP.
-  - Al clicar en el encade "Log1" aparece el mismo formulario que anteriormente que, además de realizar las acciones llevadas a cabo por log0, escribirá esos mismos datos en un archivo de registro. 
-  - Al clicar en el enlace "Log2", tras realizar las mismas acciones que en los formularios anteriores, el servlet obtendrá la ruta del archivo de registro de un parámetro de inicialización del contexto llamado "logFile" empleando web.xml.
+La página de entrada a la aplicación, explica aquello que podrán hacer tanto alumnos como profesores cuando se autentiquen. Para poder realizar esa autenticación aparecen dos botones, uno para profesores y otro para alumnos, ambos cuentan en su onSubmit con ......  
 
-## 2. Documentación que pudiera necesitar un usuario de la aplicación resultante (consulta de logs, ubicación de ficheros generados...)  
-A continuación se muestra la ubicación de los logs dentro del proyecto  
-![image](https://github.com/hikigaya5/proyectoDEW/assets/132065179/abe9f3bb-8092-4c1d-8ae3-f9ffe509a155)  
-Por último, indicar que el archivo de registro en el que se escriben los datos al completar el formulario tanto del Log1 como del Log2 se encuentran en /home/user/Documentos/resultado.txt
+`cogigo del boton redirigiendo al servlet que hace el login`  
 
-## 3. Explicación de cada una de las ordenes "curl"  
-Se ha realizado la siguiente secuencia de órdenes para interactuar con CentroEducativo v2.0 (leer+modificar+leer): 
+Como detalles para hacer la interfaz más vistosa se incluye en la página una cabecera con el nombre de la aplicación, los nombres de todos los miembros del equipo y un pequeño footer. 
 
-  - Login del usuario: Se ha guardado en la variable KEY la clave otorgada como resultado de esta orden, de esa forma podrá pasarse como parámetro a las órdenes siguientes que interactuen con CentroEducativo, "cucu" representa el fichero donde se guardarán las cookies. Tanto la KEY como el fichero con las cookies son necesarios para poder "mantener la sesión" e interacturar con CentroEducativo. Los parámetros necesarios se indican en formato JSON.
-     
-     `KEY=$(curl -s --data '{"dni":"23456733H","password":"123456"}' 
-    -X POST -H "content-type: application/json" http://dew-cgarmon1-2324.dsicv.upv.es:9090/CentroEducativo/login 
-    -c cucu -b cucu)
-    `
-  - Leer todos los alumnos de CentroEducativo: Se pasa la clave necesaria mediante la variable KEY.
-    
-    `curl -s -X GET 'http://dew-cgarmon1-2324.dsicv.upv.es:9090/CentroEducativo/alumnos?key='$KEY -H "accept: application/json" -c cucu -b cucu`
+## 2. Autenticación Web  
 
-  - Modificar un alumno de CentroEducativo: Los parámetros necesarios se indican en formato JSON. La modificación puede realizarse mediante el método POST o mediante el método PUT. Aunque le método PUT es el que mejor representa una operación de actualización hoy en dia se encuentra en desuso. A continuación se muestran ambas opciones:
-    
-    `curl -s  --data '{“apellidos”:”Fernándex”, "dni":"222222222H",”nombre”:”Maria”, "password":"123456"}' -X POST -H”content-type: application/json”
-http://dew-cgarmon1-2324.dsicv.upv.es:9090/CentroEducativo/alumnos?key='$KEY\ -c cucu -b cucu`
+## 3. Login con CentroEducativo y mantenimiento de la sesión (no es necesariamente un paso separado)  
 
-    `curl -s --data '{“apellidos”:”Fernándex”, "dni":"222222222H",”nombre”:”Maria”, "password":"123456"}' -X PUT -H "content-type: application/json" http://dew-cgarmon1-2324.dsicv.upv.es:9090/CentroEducativo/alumnos?key='$KEY -c cucu -b cucu`
+## 4. Construcción y envío de las peticiones a CentroEducativo
 
-  - Lectura de la información del alumno modificado: Por último, obtenemos únicamente el alumno sobre el cual hemos realizado la modificación. Los parámetros necesarios se indican en formato JSON.
+## 5. Interpretación de las respuestas de CentroEducativo  
 
-     `curl -s --data '{"dni":"222222222H"}' -X GET 'http://dew-cgarmon1-2324.dsicv.upv.es:9090/CentroEducativo/alumnos/?key='$KEY -H "accept: application/json" -c cucu -b cucu
-`
-`
+## 6. Construcción y retorno de las páginas HTML de respuesta  
+
+## 7. Identificación del servidor usado como prototipo  
+Servidor usado como prototipo: dew.login.2324.dsicv.upv.es
+
+## 8. Descripción del estado actual del grupo  
+Actualmente el equipo está funcionando perfectamente, todos los miembros del grupo están implicados en el trabajo, se concetan a las reuniones que hace el grupo y cumplen con todo aquello que se pone como objetivos individuales. Respecto a las expectativas del equipo, todos los miembros coinciden en que se busca obtener la máxima calificación posible.
 
 
 
