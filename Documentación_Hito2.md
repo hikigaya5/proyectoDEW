@@ -241,6 +241,9 @@ Posteriormente ya se procedió al desarrollo completo de los aspectos de la apli
 ### Pantalla principal de la aplicación
 ![image](https://github.com/hikigaya5/proyectoDEW/assets/132065179/60e80c7b-3a7e-4adb-b91a-21faa28288ec)
 
+### Login de un alumn@
+![image](https://github.com/hikigaya5/proyectoDEW/assets/132065179/a451bda6-7fd1-41df-b5a3-f8fb50f60afb)
+
 ### Pantalla que muestra la lista de asignaturas de un alumn@ concreto cuando hace el login  
 ![image](https://github.com/hikigaya5/proyectoDEW/assets/132065179/c1fa6aee-009c-47f8-9ccc-15d306312a1d)
 
