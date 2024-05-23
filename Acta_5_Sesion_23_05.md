@@ -28,14 +28,15 @@ En esta reunión se han puesto en común y se han revisado todas las tareas a en
 8. Descripción del estado actual del grupo
 
 ## 1. Página de entrada y enlace a la operación  
-La página de entrada a la aplicación Notas Online se ha utilizado "Bootstrap 5", concretamente se ha utilizado el tema "Flatly" de Bootswatch.   
-Para poder hacer uso de este tema se importa en la cabecera del HTML como si de una hoja de estilo se tratara:  
-
-`<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/flatly/bootstrap.min.css" integrity="sha384-qF/QmIAj5ZaYFAeQcrQ6bfVMAh4zZlrGwTPY7T/M+iTTLJqJBJjwwnsE5Y0mV7QK" crossorigin="anonymous">`  
+Para la realización de la página de entrada a la aplicación Notas Online (login.html) se ha utilizado "Bootstrap 5", concretamente se ha utilizado el tema "Flatly" de Bootswatch. Para poder hacer uso de este tema se importa en la cabecera del HTML como si de una hoja de estilo se tratara:  
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/flatly/bootstrap.min.css" integrity="sha384-qF/QmIAj5ZaYFAeQcrQ6bfVMAh4zZlrGwTPY7T/M+iTTLJqJBJjwwnsE5Y0mV7QK" crossorigin="anonymous">
+```
 
 La página de entrada a la aplicación explica aquello que podrán hacer tanto alumnos como profesores cuando se autentiquen. Para poder realizar esa autenticación aparecen dos botones bajo la descripción que corresponden a cada uno, uno para profesores y otro para alumnos, ambos se encuentran dentro de un form,en el cual, en su action se hace referencia al servlet "Login" al cual ha de redirigir para realizar la autenticación:
-
-`<form action="Login" method="get"><button type="button-sm-1" class="btn btn-primary">Identificarme como Profesor</button></form>`  
+```html
+<form action="Login" method="get"><button type="button-sm-1" class="btn btn-primary">Identificarme como Profesor</button></form>
+```
 
 Como detalles para hacer la interfaz más vistosa se incluye en la página una cabecera con el nombre de la aplicación, los nombres de todos los miembros del equipo en un lateral de la página y un pequeño footer. 
 
@@ -69,7 +70,66 @@ Además, tendremos que añadir las siguientes lineas en el web.xml de nuestrs ap
     <realm-name>Protegido</realm-name>
   </login-config>`  
 
-## 3. Login con CentroEducativo y mantenimiento de la sesión 
+## 3. Login con CentroEducativo y mantenimiento de la sesión  
+Una vez se ha realizado la autenticación web debemos establecer una relación entre las credenciales con las cuales el usuario se identifica en la aplicación web y aquellas que se encuentran en el nivel de datos "CentroEducativo". Para ello tenemos el servlet "Login" al cual se redirige desde la página principal.  
+Lo primero con lo que nos encontramos en el servlet es con una función completeHash() que ha sido creada para llenar un HashMap, en el que la clave será el usuario con el que se realiza la autenticación web y la clave será el dni que corresponde a este usuario.  
+```java
+Map<String, String> hash_usuarios = new HashMap<>();
+	public void completeHash() {
+		hash_usuarios.put("pepe", "12345678W");
+		hash_usuarios.put("maria", "23456387R");
+		hash_usuarios.put("miguel", "34567891F");
+		hash_usuarios.put("laura", "93847525G");
+		hash_usuarios.put("minerva", "37264096W");
+	}
+```
+A continuación ya tenemos el métódo doGet(request, response) en el que tratamos todos los aspectos del login y el mantenimiento de sesión. Desgranando poco a poco el código nos encontramos con diferentes elementos.    
+
+Primero obtenemos la sesión y el usuario y, si no se cuenta ya con la KEY, asignamos a la sesión el dni del usuario (gracias a la asignación realizada anteriomente en el HashMap) y la contraseña (se indica que para todos los usuarios la contraseá será 123456) 
+
+````java
+HttpSession session = request.getSession();
+		String usuario = request.getRemoteUser(); 
+		if(session.getAttribute("key")==null) {
+			if(usuario != null) {
+				session.setAttribute("dni", hash_usuarios.get(usuario));
+				session.setAttribute("password", "123456");
+````
+A continuación realizamos, mediante una petición POST a CentroEducativo, el login pasando en el cuerpo de la petición el dni y contraseña del usuario.
+
+```java
+URL direccionURL = new URL("http://localhost:9090/CentroEducativo/login");		
+HttpURLConnection c = (HttpURLConnection) direccionURL.openConnection(); 
+c.setRequestMethod("POST");
+c.setRequestProperty("Content-Type", "application/json");
+c.setDoOutput(true);
+DataOutputStream d = new DataOutputStream(c.getOutputStream());
+d.writeBytes("{\"dni\":\""+ session.getAttribute("dni")+ "\",\"password\":\""+session.getAttribute("password")+"\"}");
+d.close();
+```
+En el mensaje de respuesta obtenemos la KEY y las cookies, con esto podremos mantener la sesión del usuario y poder realizar las futuras peticiones a CentroEducativo para obtener información refente al usuario. 
+
+```java
+List<String> cookies = c.getHeaderFields().get("Set-Cookie");
+BufferedReader br = new BufferedReader(new InputStreamReader(c.getInputStream())); 
+String inputLine;
+StringBuffer r = new StringBuffer();
+while ((inputLine = br.readLine()) != null) {
+      r.append(inputLine);
+}
+br.close();
+String KEY = r.toString();     
+session.setAttribute("key", KEY);
+session.setAttribute("cookies", cookies.get(0));
+c.disconnect();
+```
+Finalmente se realiza la redirección a el servlet encargado de mostrar las asignaturas del Alumno:   
+```java
+if(request.isUserInRole("rolalu")) {
+        	request.getRequestDispatcher("AsignaturasAlu").forward(request, response);
+        }
+```
+Este código nos permitirá que cuando tratemos tanto con profesores como con alumnos redirigir cada uno al servlet que realiza la funcionalidad que le corresponde. 
 
 ## 4. Construcción y envío de las peticiones a CentroEducativo
 
