@@ -20,7 +20,8 @@ En esta reunión se han puesto en común y se han revisado todas las tareas a en
   
 ## Puntos del acta
 1. Página de entrada y enlace a la operación
-2. Autenticación web, Login con CentroEducativo y mantenimiento de la sesión
+2. Autenticación web
+3. Login con CentroEducativo y mantenimiento de la sesión
 4. Construcción y envío de las peticiones a CentroEducativo
 5. Interpretación de las respuestas de CentroEducativo
 6. Construcción y retorno de las páginas HTML de respuesta
