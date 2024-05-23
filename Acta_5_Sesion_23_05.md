@@ -11,7 +11,7 @@
     - Pablo Parra Sánchez  
     - Sergio Sánchez Temporal  
     - Nabil, Youssefi  
-    - Hugo Navarro   
+    - Hugo Navarro Chiner  
   ALUMNO FIRMANTE DEL DOCUMENTO: Celia García Monforte
 
 
@@ -131,7 +131,15 @@ if(request.isUserInRole("rolalu")) {
 ```
 Este código nos permitirá que cuando tratemos tanto con profesores como con alumnos redirigir cada uno al servlet que realiza la funcionalidad que le corresponde. 
 
-## 4. Construcción y envío de las peticiones a CentroEducativo
+## 4. Construcción y envío de las peticiones a CentroEducativo  
+En este hito se han realizado 4 peticiones diferentes para obtener información de CentroEducativo: 
+- Petición POST para realizar el Login y obtener key y cookies y poder mantener la sesión del usuario
+- Petición GET del nombre y apellidos del usuario que se encuentra en este momento logueado
+- Petición GET de las asignaturas de las cuales está matriculado el alumno
+- Petición GET de las asignaturas de donde podemos obtener la nota que tiene el alumno 
+
+
+
 
 ## 5. Interpretación de las respuestas de CentroEducativo  
 
