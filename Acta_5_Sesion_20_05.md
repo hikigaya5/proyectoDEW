@@ -22,7 +22,7 @@ En esta reunión se han puesto en común y se han revisado el trabajo realizado 
 1. Descripción del estado actual del trabajo
 
 ## 1. Descripción del estado actual del trabajo  
-Actualmente el trabajo se encuentra estancado en algunos aspectos de los servlets AsignaturasAlu y Notas. Se ha realizado la prueba del servlet Login y funciona correctamente. Se ha acordado pedir una tutoria al profesor para solventar dudas
+Actualmente el trabajo se encuentra estancado en algunos aspectos de los servlets AsignaturasAlu y Notas. Se ha realizado la prueba del servlet Login y funciona correctamente. Se ha acordado pedir una tutoria al profesor para solventar dudas.
 
 
 
