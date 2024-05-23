@@ -21,7 +21,7 @@ En esta reunión se han puesto en común y se han revisado todas las tareas a en
 ## Puntos del acta
 1. Descripción del estado actual del proyecto
 2. Descripción del estado actual del grupo
-3. Indetificador del servidor usado como prototipo y detalles de las pruebas realizadas.
+3. Indentificador del servidor usado como prototipo y detalles de las pruebas realizadas.
 
 ## 1. Descripción del estado actual del proyecto  
 Se ha realizado la revisión de todos los elementos a entregar en el Hito 2 y todas las pruebas funcionan correctamente. Se ha realizado, además, la documentación correspondiente al proyecto.
