@@ -23,6 +23,7 @@
 5. Interpretación de las respuestas de CentroEducativo
 6. Construcción y retorno de las páginas HTML de respuesta
 7. Identificación del servidor usado como prototipo y detalles de las pruebas realizadas
+8. Referencias y código citado
 
 ## 1. Página de entrada y enlace a la operación  
 Para la realización de la página de entrada a la aplicación Notas Online (login.html) se ha utilizado "Bootstrap 5", concretamente se ha utilizado el tema "Flatly" de Bootswatch. Para poder hacer uso de este tema se importa en la cabecera del HTML como si de una hoja de estilo se tratara:  
@@ -247,4 +248,11 @@ Antes de proceder con el desarrollo completo se hicieron algunas pruebas previas
 ![image](https://github.com/hikigaya5/proyectoDEW/assets/132065179/c1fa6aee-009c-47f8-9ccc-15d306312a1d)
 
 ### Página que muestra la nota de un alumn@ en una asignatura concreta
+![image](https://github.com/hikigaya5/proyectoDEW/assets/132065179/0d7759e8-531d-43d5-ac26-c68390261db1)
+
+
+## 8. Referencias y código citado  
+Para la realización de este proyecto se han consultado diferentes documentos y páginas web  
+- 1. 
+
 
