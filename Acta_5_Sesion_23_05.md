@@ -20,8 +20,7 @@ En esta reunión se han puesto en común y se han revisado todas las tareas a en
   
 ## Puntos del acta
 1. Página de entrada y enlace a la operación
-2. Autenticación web
-3. Login con CentroEducativo y mantenimiento de la sesión (no es necesariamente un paso separado)
+2. Autenticación web, Login con CentroEducativo y mantenimiento de la sesión
 4. Construcción y envío de las peticiones a CentroEducativo
 5. Interpretación de las respuestas de CentroEducativo
 6. Construcción y retorno de las páginas HTML de respuesta
@@ -40,9 +39,37 @@ La página de entrada a la aplicación explica aquello que podrán hacer tanto a
 
 Como detalles para hacer la interfaz más vistosa se incluye en la página una cabecera con el nombre de la aplicación, los nombres de todos los miembros del equipo en un lateral de la página y un pequeño footer. 
 
-## 2. Autenticación Web  
+## 2. Autenticación Web
+Para poder realizar la autenticación web el primer paso es añadir a los usuarios en el tomcat-users.xml de forma que se distinga e identifique a los usuarios. Además se introduce la distinción entre dos roles distintos, "rolalu" que identificará a los alumnos y "rolpro" que identificará a los profesores. Esta distinción de roles nos será útil en futuras fases para separar entre lo que puede hacer un profesor y lo que puede hacer un alumno, a continuación se muestra el código introducido en tomcat-users.xml   
 
-## 3. Login con CentroEducativo y mantenimiento de la sesión (no es necesariamente un paso separado)  
+`<tomcat-users xmlns="http://tomcat.apache.org/xml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://tomcat.apache.org/xml tomcat-users.xsd" version="1.0">
+<role rolename="rolalu"/>
+<role rolename="rolpro"/>
+<user username="minerva" password="123456" roles="rolalu"/>
+<user username="pepe" password="123456" roles="rolalu"/>
+<user username="maria" password="123456" roles="rolalu"/>
+<user username="miguel" password="123456" roles="rolalu"/>
+<user username="laura" password="123456" roles="rolalu"/>`  
+
+
+Además, tendremos que añadir las siguientes lineas en el web.xml de nuestrs aplicación web para acabar de definir la autenticación web:  
+
+`<security-constraint>
+    <web-resource-collection>
+      <web-resource-name>Login</web-resource-name>
+      <url-pattern>/Login</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>rolpro</role-name>
+      <role-name>rolalu</role-name>
+    </auth-constraint>
+  </security-constraint>
+  <login-config>
+    <auth-method>BASIC</auth-method>
+    <realm-name>Protegido</realm-name>
+  </login-config>`  
+
+## 3. Login con CentroEducativo y mantenimiento de la sesión 
 
 ## 4. Construcción y envío de las peticiones a CentroEducativo
 
