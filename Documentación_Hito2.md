@@ -1,10 +1,7 @@
-## ACTA REUNIÓN 
+## DOCUMENTACIÓN DEL TRABAJO REALIZADO PARA EL HITO 2
 
-## Preámbulo
-  FECHA: 23/05/2024  
-  IDENTIFICADOR DE GRUPO: Grupo 3ti12_g6  
-  TIPO DE REUNIÓN: Videoconferencia por DISCORD  
-  ASISTENCIA:  
+## Trabajo realizado por:
+  IDENTIFICADOR DE GRUPO: Grupo 3ti12_g6   
     - Celia García Monforte  
     - Anas El Hani Marouane  
     - Manrique Marco Ases  
@@ -15,18 +12,17 @@
   ALUMNO FIRMANTE DEL DOCUMENTO: Celia García Monforte
 
 
-## Resumen de la reunión  
-En esta reunión se han puesto en común y se han revisado todas las tareas a entregar en el Hito 2. A continuación se detallarán los aspectos a explicar sobre los entregables del Hito 2.
+## Resumen del documento
+ A continuación se detallarán los aspectos a explicar sobre los entregables del Hito 2.
   
-## Puntos del acta
+## Puntos del documento
 1. Página de entrada y enlace a la operación
 2. Autenticación web
 3. Login con CentroEducativo y mantenimiento de la sesión
 4. Construcción y envío de las peticiones a CentroEducativo
 5. Interpretación de las respuestas de CentroEducativo
 6. Construcción y retorno de las páginas HTML de respuesta
-7. Identificación del servidor usado como prototipo
-8. Descripción del estado actual del grupo
+7. Identificación del servidor usado como prototipo y detalles de las pruebas realizadas
 
 ## 1. Página de entrada y enlace a la operación  
 Para la realización de la página de entrada a la aplicación Notas Online (login.html) se ha utilizado "Bootstrap 5", concretamente se ha utilizado el tema "Flatly" de Bootswatch. Para poder hacer uso de este tema se importa en la cabecera del HTML como si de una hoja de estilo se tratara:  
@@ -230,7 +226,7 @@ En el código anterior se observa como se crea un objeto JSONObject y postrerior
  + "   </header>");
 ```
  
-## 7. Identificación del servidor usado como prototipo y detalles de la prueba realizada
+## 7. Identificación del servidor usado como prototipo y detalles de las pruebas realizadas
 Servidor usado como prototipo: dew.cgarmon1.2324.dsicv.upv.es  
 Las pruebas se han realizado en el servidor mencionado anteriormente se ha realizado las siguientes pruebas: 
 - Prueba del alumno PEPE: usuario: pepe, contraseña: 123456
@@ -243,8 +239,6 @@ Antes de proceder con el desarrollo completo se hicieron algunas pruebas previas
 ''foto de la pagina que muestra la cookie''  
 Posteriormente ya se procedió al desarrollo completo de los aspectos de la aplicación solicitados para la entrega del Hito2  
 ''foto de que todo funciona guay''
-## 8. Descripción del estado actual del grupo  
-Actualmente el equipo está funcionando perfectamente, todos los miembros del grupo están implicados en el trabajo, se concetan a las reuniones que hace el grupo y cumplen con todo aquello que se pone como objetivos individuales. Respecto a las expectativas del equipo, todos los miembros coinciden en que se busca obtener la máxima calificación posible.
 
 
 
