@@ -253,6 +253,10 @@ Antes de proceder con el desarrollo completo se hicieron algunas pruebas previas
 
 ## 8. Referencias y código citado  
 Para la realización de este proyecto se han consultado diferentes documentos y páginas web  
-- 1. 
+- Documentación del trabajo "NOL_Especificación_Trajao2324f.docx": https://poliformat.upv.es/access/content/group/GRA_11610_2023/Trabajo%20en%20Grupo/NOL_Especificacion_Trabajo2324_v2.pdf
+- Centrar texto en página principal: https://getbootstrap.esdocu.com/docs/5.1/utilities/text/
+- Estilo de la página principal: https://www.bootstrapcdn.com/bootswatch
+- Consultas sobre como realizar el HashMap: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/HashMap.html
+
 
 
