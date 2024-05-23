@@ -257,6 +257,7 @@ Para la realización de este proyecto se han consultado diferentes documentos y 
 - Centrar texto en página principal: https://getbootstrap.esdocu.com/docs/5.1/utilities/text/
 - Estilo de la página principal: https://www.bootstrapcdn.com/bootswatch
 - Consultas sobre como realizar el HashMap: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/HashMap.html
+- Consultas sobre como mantener la sesión: https://stackoverflow.com/questions/36892140/how-to-handle-https-url-that-ends-up-plaintext-connection
 
 
 
