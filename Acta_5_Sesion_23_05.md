@@ -136,10 +136,56 @@ En este hito se han realizado 4 peticiones diferentes para obtener información 
 - Petición POST para realizar el Login y obtener key y cookies y poder mantener la sesión del usuario
 - Petición GET del nombre y apellidos del usuario que se encuentra en este momento logueado
 - Petición GET de las asignaturas de las cuales está matriculado el alumno
-- Petición GET de las asignaturas de donde podemos obtener la nota que tiene el alumno 
+- Petición GET de las asignaturas de donde podemos obtener la nota que tiene el alumno
 
-
-
+### Peticiones de tipo POST: 
+```java
+URL direccionURL = new URL("http://localhost:9090/CentroEducativo/login");        
+HttpURLConnection c = (HttpURLConnection) direccionURL.openConnection(); 
+c.setRequestMethod("POST");
+c.setRequestProperty("Content-Type", "application/json");
+c.setDoOutput(true);
+DataOutputStream d = new DataOutputStream(c.getOutputStream());
+d.writeBytes("{\"dni\":\"" + session.getAttribute("dni") + "\",\"password\":\"" + session.getAttribute("password") + "\"}");
+d.close();
+```
+De este codigo podemos identificar la parte en la que se indica la URL a la cual se debe realizar la petición y se crea una conexión : 
+```java
+URL direccionURL = new URL("http://localhost:9090/CentroEducativo/login");        
+HttpURLConnection c = (HttpURLConnection) direccionURL.openConnection();
+```
+También podemos ver como se especifican parámetros necesarios para el correcto funcionamiento de la petición como el tipo de método que es, el formato del contenido de la respuesta y habilita la conexión para enviar datos :
+```java
+c.setRequestMethod("POST");
+c.setRequestProperty("Content-Type", "application/json");
+c.setDoOutput(true);
+```
+Por último, se crea un DataOutPutStream para poder escribir datos en la conexión de salida y se escriben los datos JSON que forman parte del cuerpo de la petición. 
+```java
+DataOutputStream d = new DataOutputStream(c.getOutputStream());
+d.writeBytes("{\"dni\":\"" + session.getAttribute("dni") + "\",\"password\":\"" + session.getAttribute("password") + "\"}");
+d.close();
+```
+### Peticiones de tipo GET: 
+```java
+URL direccionURL = new URL("http://localhost:9090/CentroEducativo/alumnos/" + dni + "/asignaturas?key=" + key);
+HttpURLConnection c = (HttpURLConnection) direccionURL.openConnection();
+c.setRequestMethod("GET");
+c.setRequestProperty("Accept", "application/json");
+c.setRequestProperty("Cookie", cookies);
+c.setDoOutput(true);
+```
+De este codigo podemos identificar la parte en la que se indica la URL a la cual se debe realizar la petición y se crea una conexión, de igual forma que se hacia con las peticiones POST: 
+```java
+URL direccionURL = new URL("http://localhost:9090/CentroEducativo/alumnos/" + dni + "/asignaturas?key=" + key);
+HttpURLConnection c = (HttpURLConnection) direccionURL.openConnection();
+```
+Por último, vemos como se especifican parámetros necesarios para el correcto funcionamiento de la petición como el tipo de método que es, el formato del contenido de la respuesta y establece una propiedad que permie enviar cookies al servidor para realizar el mantenimiento de sesión :
+```java
+c.setRequestMethod("GET");
+c.setRequestProperty("Accept", "application/json");
+c.setRequestProperty("Cookie", cookies);
+```
 
 ## 5. Interpretación de las respuestas de CentroEducativo  
 
