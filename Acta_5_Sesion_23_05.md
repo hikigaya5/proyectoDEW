@@ -188,11 +188,38 @@ c.setRequestProperty("Cookie", cookies);
 ```
 
 ## 5. Interpretación de las respuestas de CentroEducativo  
-
+Tanto en las peticiones POST como en las GET que hemos implementado recibimos como respuesta de CentroEducativo información que utilizaremos o que debe ser mostrada en la aplicación web.   
+Para poder interpretar las respuestas de CentroEducativo neceitamos de un BufferedReader que lea la respuesta del servidor y posteriormente que, en un while, se lea cada linea y se añada al StringBuffer para construir la respuesta. El código utilizado se encuentra a continuación:  
+```java
+BufferedReader br = new BufferedReader(new InputStreamReader(c.getInputStream())); 
+		            String inputLine;
+		            StringBuffer r = new StringBuffer();
+		            while ((inputLine = br.readLine()) != null) {
+		                    r.append(inputLine);
+		            }
+```
+Por útltimo, en algunos casos ha sido necesario convertir la respuestra a String para su posterior tratamiento: 
+```java
+ String asignaturas = r.toString();
+```
 ## 6. Construcción y retorno de las páginas HTML de respuesta  
+A partir de la información obtenida por las consultas se ha realizado la construcción de páginas HTML en los servlets para mostrar esa información obtenida, además de otros aspectos tanto decorativos como informativos. 
+Para poder mostrar la información hace de indicarse que el contenido que se va a escribir tiene formato html y se hace uso de un PrintWriter que escribirá el código HTML que formara la página mediante un println:  
+```java
+ response.setContentType("text/html");
+        PrintWriter out = response.getWriter();
+	out.println("<html>");
+	...
+
+```
+Ha de incluirse dentro del ```java out.println()``` el hipertexto que se incluiría en cualquier otro documento HTML. 
+Por otra parte, para mostrar aquella información que proviene de las respuestas de las peticiones almacenamos en una variable de tipo String de la siguiente forma:  
+```java
+String nombre = request.getParameter("nombre");
+```
 
 ## 7. Identificación del servidor usado como prototipo  
-Servidor usado como prototipo: dew.login.2324.dsicv.upv.es
+Servidor usado como prototipo: dew.cgarmon1.2324.dsicv.upv.es
 
 ## 8. Descripción del estado actual del grupo  
 Actualmente el equipo está funcionando perfectamente, todos los miembros del grupo están implicados en el trabajo, se concetan a las reuniones que hace el grupo y cumplen con todo aquello que se pone como objetivos individuales. Respecto a las expectativas del equipo, todos los miembros coinciden en que se busca obtener la máxima calificación posible.
