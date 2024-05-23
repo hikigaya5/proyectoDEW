@@ -229,10 +229,20 @@ En el código anterior se observa como se crea un objeto JSONObject y postrerior
  + "        </div>    \n"
  + "   </header>");
 ```
+ 
+## 7. Identificación del servidor usado como prototipo y detalles de la prueba realizada
+Servidor usado como prototipo: dew.cgarmon1.2324.dsicv.upv.es  
+Las pruebas se han realizado en el servidor mencionado anteriormente se ha realizado las siguientes pruebas: 
+- Prueba del alumno PEPE: usuario: pepe, contraseña: 123456
+- Prueba del alumno MARIA: usuario: maria, contraseña: 123456
+- Prueba del alumno MIGUEL: usuario: miguel, contraseña: 123456
+- Prueba del alumno LAURA: usuario: laura, contraseña: 123456
+- Prueba del alumno MINERVA: usuario: pepe, contraseña: 123456
 
-## 7. Identificación del servidor usado como prototipo  
-Servidor usado como prototipo: dew.cgarmon1.2324.dsicv.upv.es
-
+Antes de proceder con el desarrollo completo se hicieron algunas pruebas previas para comprobar que la autenticación web y el login con CentroEducativo se hacian correctamente:   
+''foto de la pagina que muestra la cookie''  
+Posteriormente ya se procedió al desarrollo completo de los aspectos de la aplicación solicitados para la entrega del Hito2  
+''foto de que todo funciona guay''
 ## 8. Descripción del estado actual del grupo  
 Actualmente el equipo está funcionando perfectamente, todos los miembros del grupo están implicados en el trabajo, se concetan a las reuniones que hace el grupo y cumplen con todo aquello que se pone como objetivos individuales. Respecto a las expectativas del equipo, todos los miembros coinciden en que se busca obtener la máxima calificación posible.
 
