@@ -215,7 +215,18 @@ Para poder mostrar la información hace de indicarse que el contenido que se va 
 Ha de incluirse dentro del ```java out.println()``` el hipertexto que se incluiría en cualquier otro documento HTML. 
 Por otra parte, para mostrar aquella información que proviene de las respuestas de las peticiones almacenamos en una variable de tipo String de la siguiente forma:  
 ```java
-String nombre = request.getParameter("nombre");
+String alumno = re.toString();
+JSONObject alumnoObject = new JSONObject(alumno);
+String nombre_alumno = alumnoObject.getString("nombre");
+String apellidos_alumno = alumnoObject.getString("apellidos");
+```
+En el código anterior se observa como se crea un objeto JSONObject y postreriormente se extraen los valores que se necesitan. Finalmente esos valores se introduciran en los prints para mostrarlos en la página: 
+```java
+ out.println(preTituloHTML5 + "<header class=\"header\">\n"
+ + "        <div class=\"col-md-12  d-flex justify-content-center p-5\">\n"
+ + "           <h1><strong>ASIGNATURAS DE: </strong>" + nombre_alumno + "&nbsp" + apellidos_alumno + "</h1>  \n"
+ + "        </div>    \n"
+ + "   </header>");
 ```
 
 ## 7. Identificación del servidor usado como prototipo  
