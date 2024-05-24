@@ -229,14 +229,14 @@ En el código anterior se observa como se crea un objeto JSONObject y postrerior
  
 ## 7. Identificación del servidor usado como prototipo y detalles de las pruebas realizadas
 Servidor usado como prototipo: dew.cgarmon1.2324.dsicv.upv.es  
-Las pruebas se han realizado en el servidor mencionado anteriormente se ha realizado las siguientes pruebas: 
-- Prueba del alumno PEPE: usuario: pepe, contraseña: 123456
-- Prueba del alumno MARIA: usuario: maria, contraseña: 123456
-- Prueba del alumno MIGUEL: usuario: miguel, contraseña: 123456
-- Prueba del alumno LAURA: usuario: laura, contraseña: 123456
-- Prueba del alumno MINERVA: usuario: pepe, contraseña: 123456
+En el servidor mencionado anteriormente se han realizado las siguientes pruebas: 
+- Prueba del alumno PEPE-> usuario: pepe, contraseña: 123456
+- Prueba del alumno MARIA-> usuario: maria, contraseña: 123456
+- Prueba del alumno MIGUEL-> usuario: miguel, contraseña: 123456
+- Prueba del alumno LAURA-> usuario: laura, contraseña: 123456
+- Prueba del alumno MINERVA-> usuario: pepe, contraseña: 123456
 
-Antes de proceder con el desarrollo completo se hicieron algunas pruebas previas para comprobar que la autenticación web y el login con CentroEducativo se hacian correctamente. Posteriormente se procedió al desarrollo completo de los aspectos de la aplicación solicitados para la entrega del Hito2  
+Antes de proceder con el desarrollo completo se hicieron algunas pruebas previas para comprobar que la autenticación web y el login con CentroEducativo se hacían correctamente. Posteriormente se procedió al desarrollo completo de los aspectos de la aplicación solicitados para la entrega del Hito2.
 
 ### Página principal de la aplicación
 ![image](https://github.com/hikigaya5/proyectoDEW/assets/132065179/60e80c7b-3a7e-4adb-b91a-21faa28288ec)
