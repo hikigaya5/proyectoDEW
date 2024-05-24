@@ -70,7 +70,7 @@ Además, tendremos que añadir las siguientes lineas en el web.xml de nuestrs ap
 
 ## 3. Login con CentroEducativo y mantenimiento de la sesión  
 Una vez se ha realizado la autenticación web debemos establecer una relación entre las credenciales con las cuales el usuario se identifica en la aplicación web y aquellas que se encuentran en el nivel de datos "CentroEducativo". Para ello tenemos el servlet "Login" al cual se redirige desde la página principal.  
-Lo primero con lo que nos encontramos en el servlet es con una función completeHash() que ha sido creada para llenar un HashMap, en el que la clave será el usuario con el que se realiza la autenticación web y la clave será el dni que corresponde a este usuario.  
+Lo primero con lo que nos encontramos en el servlet es con una función completeHash() que ha sido creada para llenar un HashMap, en el que la clave será el usuario con el que se realiza la autenticación web y el valor será el dni que corresponde a este usuario.  
 ```java
 Map<String, String> hash_usuarios = new HashMap<>();
 	public void completeHash() {
