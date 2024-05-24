@@ -202,7 +202,7 @@ Por útltimo, en algunos casos ha sido necesario convertir la respuestra a Strin
 ```
 ## 6. Construcción y retorno de las páginas HTML de respuesta  
 A partir de la información obtenida por las consultas se ha realizado la construcción de páginas HTML en los servlets para mostrar esa información obtenida, además de otros aspectos tanto decorativos como informativos. 
-Para poder mostrar la información hace de indicarse que el contenido que se va a escribir tiene formato html y se hace uso de un PrintWriter que escribirá el código HTML que formara la página mediante un println:  
+Para poder mostrar la información ha de indicarse que el contenido que se va a escribir tiene formato html y se hace uso de un PrintWriter que escribirá el código HTML que formará la página mediante un println:  
 ```java
  response.setContentType("text/html");
         PrintWriter out = response.getWriter();
