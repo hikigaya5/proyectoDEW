@@ -190,11 +190,11 @@ Tanto en las peticiones POST como en las GET que hemos implementado recibimos co
 Para poder interpretar las respuestas de CentroEducativo neceitamos de un BufferedReader que lea la respuesta del servidor y posteriormente que, en un while, se lea cada linea y se añada al StringBuffer para construir la respuesta. El código utilizado se encuentra a continuación:  
 ```java
 BufferedReader br = new BufferedReader(new InputStreamReader(c.getInputStream())); 
-		            String inputLine;
-		            StringBuffer r = new StringBuffer();
-		            while ((inputLine = br.readLine()) != null) {
-		                    r.append(inputLine);
-		            }
+String inputLine;
+StringBuffer r = new StringBuffer();
+while ((inputLine = br.readLine()) != null) {
+    r.append(inputLine);
+}
 ```
 Por útltimo, en algunos casos ha sido necesario convertir la respuestra a String para su posterior tratamiento: 
 ```java
