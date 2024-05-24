@@ -87,11 +87,11 @@ Primero obtenemos la sesión y el usuario y, si no se cuenta ya con la KEY, asig
 
 ````java
 HttpSession session = request.getSession();
-		String usuario = request.getRemoteUser(); 
-		if(session.getAttribute("key")==null) {
-			if(usuario != null) {
-				session.setAttribute("dni", hash_usuarios.get(usuario));
-				session.setAttribute("password", "123456");
+String usuario = request.getRemoteUser(); 
+if(session.getAttribute("key")==null) {
+	if(usuario != null) {
+		session.setAttribute("dni", hash_usuarios.get(usuario));
+		session.setAttribute("password", "123456");
 ````
 A continuación realizamos, mediante una petición POST a CentroEducativo, el login pasando en el cuerpo de la petición el dni y contraseña del usuario.
 
