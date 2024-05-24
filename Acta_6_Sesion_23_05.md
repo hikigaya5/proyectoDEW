@@ -31,12 +31,12 @@ Actualmente el equipo está funcionando perfectamente, todos los miembros del gr
 
 ## 3. Identificación del servidor usado como prototipo y detalles de la prueba realizada
 Servidor usado como prototipo: dew.cgarmon1.2324.dsicv.upv.es  
-Las pruebas se han realizado en el servidor mencionado anteriormente se ha realizado las siguientes pruebas: 
-- Prueba del alumno PEPE: usuario: pepe, contraseña: 123456
-- Prueba del alumno MARIA: usuario: maria, contraseña: 123456
-- Prueba del alumno MIGUEL: usuario: miguel, contraseña: 123456
-- Prueba del alumno LAURA: usuario: laura, contraseña: 123456
-- Prueba del alumno MINERVA: usuario: pepe, contraseña: 123456
+En el servidor mencionado anteriormente se han realizado las siguientes pruebas: 
+- Prueba del alumno PEPE-> usuario: pepe, contraseña: 123456
+- Prueba del alumno MARIA-> usuario: maria, contraseña: 123456
+- Prueba del alumno MIGUEL-> usuario: miguel, contraseña: 123456
+- Prueba del alumno LAURA-> usuario: laura, contraseña: 123456
+- Prueba del alumno MINERVA-> usuario: pepe, contraseña: 123456
 
 Antes de proceder con el desarrollo completo se hicieron algunas pruebas previas para comprobar que la autenticación web y el login con CentroEducativo se hacian correctamente. Posteriormente se procedió al desarrollo completo de los aspectos de la aplicación solicitados para la entrega del Hito2  
 
