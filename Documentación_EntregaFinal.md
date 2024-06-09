@@ -243,6 +243,13 @@ En el código anterior se observa como se crea un objeto JSONObject y postrerior
  + "   </header>");
 ```
 ## 7. Interacción del código JavaScript con los servlets por AJAX
+La integración del código JavaScript nos permite interactuar con el servidor a través de peticiones asincrónicas de la siguiente forma: 
+
+1. Configuración del Servlet en el Servidor que maneje las peticiones AJAX 
+2. Realizar una petición AJAX al servlet utilizando JavaScript
+3. Una vez que la respuesta es recibida del servlet, se puede interpretar el resultado y actualizar dinámicamente la página web con la información obtenida
+
+No se introduce codigo propio de la aplicacion puesto que no se a alcanzado esta funcionalidad
 
 ## 8 Inserción de las informaciones en las páginas
 
