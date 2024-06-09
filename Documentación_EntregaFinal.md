@@ -145,6 +145,7 @@ if(request.isUserInRole("rolpro")) {
 En la aplicación encontramos diferentes funcionalidades para las cuales es necesario construir y realizar el envio de peticiones a CentroEducativo, son las siguientes:   
 - Vista de las asignaturas de un Alumno (funcionalidad disponible para Alumnos)
 - Vista de la nota de un Alumno (funcionaliad disponible para Alumnos)
+- Vista del certificado de notas (funcionalidad disponible para Alumnos)
 - Vista de las asignaturas en las que imparte docencia un Profesor (funcionalidad disponible para Profesores)
 - Vista de los alumnos que estan matriculados en una asignatura (funcionalidad disponible para Profesores)
 - Vista de los detalles de un Alumno (funcionalidad disponible para Profesores)
