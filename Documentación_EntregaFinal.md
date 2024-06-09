@@ -246,7 +246,7 @@ En el código anterior se observa como se crea un objeto JSONObject y postrerior
 ## 8 Inserción de las informaciones en las páginas
 
 ## 9. Anotaciones de accesos (logs) 
-Con motivo de tener un registro de toda la información sobre el funcionamiento de la aplicación se han rescatado los logs para implementarlos a modo de filtro. Para lograrlo se ha creado un serlet Log.java que cuenta con un método doFilter(), en el cual se registra cada solicitud en un archivo log, asegurandose de que el archivo existe y abriendolo de forma en que no se sobreescriba la información anterior. Posteriormente permite que la solicitud continue su correcto procesamiento.  
+Con motivo de tener un registro de toda la información sobre el funcionamiento de la aplicación se han rescatado los logs para implementarlos a modo de filtro. Para lograrlo se ha creado un archivo `Log.java` que cuenta con un método `doFilter()`, en el cual se registra cada solicitud en un archivo log, asegurandose de que el archivo existe y abriendolo de forma en que no se sobreescriba la información anterior. Posteriormente permite que la solicitud continue su correcto procesamiento.  
 
 A continuación se muestra el código clave: 
 
@@ -272,10 +272,8 @@ public void doFilter(ServletRequest request, ServletResponse response, FilterCha
 	}
 ```
 
-
-
 ## 10. Fotos 
-
+En esta aplicación se trata con las imagenes de los alumnos
 
 ## 8. Identificación del servidor usado como prototipo y detalles de las pruebas realizadas
 Servidor usado como prototipo: dew-cgarmon1-2324.dsicv.upv.es  
