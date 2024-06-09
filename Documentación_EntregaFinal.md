@@ -309,7 +309,6 @@ Para la realización de este proyecto se han consultado diferentes documentos y 
 - Consultas sobre como mantener la sesión: https://stackoverflow.com/questions/36892140/how-to-handle-https-url-that-ends-up-plaintext-connection
 
 ## 10. ANEXO (actas)
-****
 ### ACTA 1
 
 ACTA REUNIÓN 1
