@@ -278,7 +278,7 @@ public void doFilter(ServletRequest request, ServletResponse response, FilterCha
 
 
 ## 8. Identificación del servidor usado como prototipo y detalles de las pruebas realizadas
-Servidor usado como prototipo: dew.cgarmon1.2324.dsicv.upv.es  
+Servidor usado como prototipo: dew-cgarmon1-2324.dsicv.upv.es  
 En el servidor mencionado anteriormente se han realizado las siguientes pruebas: 
 - Prueba del alumno PEPE-> usuario: pepe, contraseña: 123456
 - Prueba del alumno MARIA-> usuario: maria, contraseña: 123456
