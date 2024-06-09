@@ -309,7 +309,7 @@ Para la realización de este proyecto se han consultado diferentes documentos y 
 - Consultas sobre como mantener la sesión: https://stackoverflow.com/questions/36892140/how-to-handle-https-url-that-ends-up-plaintext-connection
 
 ## 10. ANEXO (actas)
-
+****
 ### ACTA 1
 
 ACTA REUNIÓN 1
@@ -366,7 +366,7 @@ Nabil realizó la exposición sobre la Agrupación 3: Apartados "Conflictos, Ges
 
 Hugo realizó la exposición sobre la Agrupación 1: Apartados "Comunicación, Objetivos, Resolución de problemas". El resto de miembros considera que tenia facilidad a la hora de expresarse.
 
-
+****
 ### ACTA 2 
 
 ACTA REUNIÓN
@@ -396,7 +396,7 @@ Log0 + Formulario correspondiente: Anas y Nabil
 Log1 + Formulario correspondiente: Hugo y Sergio
 Log2 + Formulario correspondiente: Pablo
 Shell Scrpit curls: Celia y Manrique 
-
+****
 ### ACTA 3
 ACTA REUNIÓN
 Preámbulo
@@ -455,7 +455,7 @@ curl -s --data '{“apellidos”:”Fernándex”, "dni":"222222222H",”nombre�
 Lectura de la información del alumno modificado: Por último, obtenemos únicamente el alumno sobre el cual hemos realizado la modificación. Los parámetros necesarios se indican en formato JSON.
 
 curl -s --data '{"dni":"222222222H"}' -X GET 'http://dew-cgarmon1-2324.dsicv.upv.es:9090/CentroEducativo/alumnos/?key='$KEY -H "accept: application/json" -c cucu -b cucu  `
-
+****
 ### ACTA 4
 
 ACTA REUNIÓN
@@ -487,7 +487,7 @@ Login con CentroEducativo y mantenimiento de la sesión (no es necesariamente un
 Construcción y envío de las peticiones a CentroEducativo: Nabil Youssefi
 Interpretación de las respuestas de CentroEducativo: Anas El Hani
 Construcción y retorno de las páginas HTML de respuesta: Manrique Marco
-
+****
 ### ACTA 5
 
 ACTA REUNIÓN
@@ -543,8 +543,8 @@ Página que muestra la lista de asignaturas de un alumn@ concreto cuando hace el
 
 Página que muestra la nota de un alumn@ en una asignatura concreta
 ![333363814-0d7759e8-531d-43d5-ac26-c68390261db1](https://github.com/hikigaya5/proyectoDEW/assets/132065179/ec113104-b2e5-479b-86d2-157703453fed)
-
-### ACTA 7
+****
+### ACTA 6
 
 ACTA REUNIÓN
 Preámbulo
