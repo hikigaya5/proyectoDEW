@@ -1,4 +1,4 @@
-## DOCUMENTACIÓN DEL TRABAJO REALIZADO PARA EL HITO 2
+## DOCUMENTACIÓN DEL TRABAJO PROYECTO NOL
 
 ## Trabajo realizado por:
   IDENTIFICADOR DE GRUPO: Grupo 3ti12_g6   
@@ -13,17 +13,21 @@
 
 
 ## Resumen del documento
- A continuación se detallarán los aspectos a explicar sobre los entregables del Hito 2.
+ A continuación se detallarán los aspectos a explicar sobre todos los elementos que componen este proyecto.
   
 ## Puntos del documento
 1. Página de entrada y enlace a la operación
-2. Autenticación web
+2. Autenticación web 
 3. Login con CentroEducativo y mantenimiento de la sesión
 4. Construcción y envío de las peticiones a CentroEducativo
-5. Interpretación de las respuestas de CentroEducativo
+5. Interpretación de las respuestas de CentroEducativo  
 6. Construcción y retorno de las páginas HTML de respuesta
-7. Identificación del servidor usado como prototipo y detalles de las pruebas realizadas
-8. Referencias y código citado
+7. Interacción del código JavaScript con los servlets por AJAX
+8. Interaacciones Implementadas
+10. Inserción de las informaciones en las páginas¿?
+11. Explicación de las anotaciones de accesos (logs)
+12. Identificación del servidor usado como prototipo y detalles de las pruebas realizadas
+13. Referencias y código citado
 
 ## 1. Página de entrada y enlace a la operación  
 Para la realización de la página de entrada a la aplicación Notas Online (login.html) se ha utilizado "Bootstrap 5", concretamente se ha utilizado el tema "Flatly" de Bootswatch. Para poder hacer uso de este tema se importa en la cabecera del HTML como si de una hoja de estilo se tratara:  
@@ -35,11 +39,10 @@ La página de entrada a la aplicación explica aquello que podrán hacer tanto a
 ```html
 <form action="Login" method="get"><button type="button-sm-1" class="btn btn-primary">Identificarme como Profesor</button></form>
 ```
-
 Como detalles para hacer la interfaz más vistosa se incluye en la página una cabecera con el nombre de la aplicación, los nombres de todos los miembros del equipo en un lateral de la página y un pequeño footer. 
 
 ## 2. Autenticación Web
-Para poder realizar la autenticación web el primer paso es añadir a los usuarios en el tomcat-users.xml de forma que se distinga e identifique a los usuarios. Además se introduce la distinción entre dos roles distintos, "rolalu" que identificará a los alumnos y "rolpro" que identificará a los profesores. Esta distinción de roles nos será útil en futuras fases para separar entre lo que puede hacer un profesor y lo que puede hacer un alumno, a continuación se muestra el código introducido en tomcat-users.xml   
+Para poder realizar la autenticación web el primer paso es añadir a los usuarios en el tomcat-users.xml de forma que se distinga e identifique a los usuarios. Además se introduce la distinción entre dos roles distintos, "rolalu" que identificará a los alumnos y "rolpro" que identificará a los profesores. Esta distinción de roles nos será útil para separar entre lo que puede hacer un profesor y lo que puede hacer un alumno, a continuación se muestra el código introducido en tomcat-users.xml   
 
 `<tomcat-users xmlns="http://tomcat.apache.org/xml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://tomcat.apache.org/xml tomcat-users.xsd" version="1.0">
 <role rolename="rolalu"/>
@@ -48,8 +51,11 @@ Para poder realizar la autenticación web el primer paso es añadir a los usuari
 <user username="pepe" password="123456" roles="rolalu"/>
 <user username="maria" password="123456" roles="rolalu"/>
 <user username="miguel" password="123456" roles="rolalu"/>
-<user username="laura" password="123456" roles="rolalu"/>`  
-
+<user username="laura" password="123456" roles="rolalu"/>
+<user username="ramon" password="123456" roles="rolpro"/>
+<user username="pedro" password="123456" roles="rolpro"/>
+<user username="manoli" password="123456" roles="rolpro"/>
+<user username="joan" password="123456" roles="rolpro"/>`  `  
 
 Además, tendremos que añadir las siguientes lineas en el web.xml de nuestrs aplicación web para acabar de definir la autenticación web:  
 
@@ -79,6 +85,10 @@ Map<String, String> hash_usuarios = new HashMap<>();
 		hash_usuarios.put("miguel", "34567891F");
 		hash_usuarios.put("laura", "93847525G");
 		hash_usuarios.put("minerva", "37264096W");
+		hash_usuarios.put("ramon", "23456733H");
+		hash_usuarios.put("pedro", "10293756L");
+		hash_usuarios.put("manoli", "06374291A");
+		hash_usuarios.put("joan", "65748923M");
 	}
 ```
 A continuación ya tenemos el métódo doGet(request, response) en el que tratamos todos los aspectos del login y el mantenimiento de sesión. Desgranando poco a poco el código nos encontramos con diferentes elementos.    
@@ -121,21 +131,26 @@ session.setAttribute("key", KEY);
 session.setAttribute("cookies", cookies.get(0));
 c.disconnect();
 ```
-Finalmente se realiza la redirección a el servlet encargado de mostrar las asignaturas del Alumno:   
+Finalmente se realiza la redirección a el servlet que corresponda en función del usuario que haya iniciado sesión:   
 ```java
 if(request.isUserInRole("rolalu")) {
         	request.getRequestDispatcher("AsignaturasAlu").forward(request, response);
         }
+if(request.isUserInRole("rolpro")) {
+        	request.getRequestDispatcher("AsignaturasProf").forward(request, response);
+        }
 ```
-Este código nos permitirá que cuando tratemos tanto con profesores como con alumnos redirigir cada uno al servlet que realiza la funcionalidad que le corresponde. 
 
 ## 4. Construcción y envío de las peticiones a CentroEducativo  
-En este hito se han realizado 4 peticiones diferentes para obtener información de CentroEducativo: 
-- Petición POST para realizar el Login y obtener key y cookies y poder mantener la sesión del usuario
-- Petición GET del nombre y apellidos del usuario que se encuentra en este momento logueado
-- Petición GET de las asignaturas de las cuales está matriculado el alumno
-- Petición GET de las asignaturas de donde podemos obtener la nota que tiene el alumno
+En la aplicación encontramos diferentes funcionalidades para las cuales es necesario construir y realizar el envio de peticiones a CentroEducativo, son las siguientes:   
+- Vista de las asignaturas de un Alumno (funcionalidad disponible para Alumnos)
+- Vista de la nota de un Alumno (funcionaliad disponible para Alumnos)
+- Vista de las asignaturas en las que imparte docencia un Profesor (funcionalidad disponible para Profesores)
+- Vista de los alumnos que estan matriculados en una asignatura (funcionalidad disponible para Profesores)
+- Vista de los detalles de un Alumno (funcionalidad disponible para Profesores)
 
+Hay algunas peticiones que se realizan por POST y otras por GET, vemos en detalle un ejemplo de cada una de ellas para ver sus similitudes y diferencias.
+     
 ### Peticiones de tipo POST: 
 ```java
 URL direccionURL = new URL("http://localhost:9090/CentroEducativo/login");        
@@ -187,7 +202,7 @@ c.setRequestProperty("Cookie", cookies);
 
 ## 5. Interpretación de las respuestas de CentroEducativo  
 Tanto en las peticiones POST como en las GET que hemos implementado recibimos como respuesta de CentroEducativo información que utilizaremos o que debe ser mostrada en la aplicación web.   
-Para poder interpretar las respuestas de CentroEducativo neceitamos de un BufferedReader que lea la respuesta del servidor y posteriormente que, en un while, se lea cada linea y se añada al StringBuffer para construir la respuesta. El código utilizado se encuentra a continuación:  
+Para poder interpretar las respuestas de CentroEducativo necesitamos de un BufferedReader que lea la respuesta del servidor y posteriormente que, en un while, se lea cada linea y se añada al StringBuffer para construir la respuesta. El código utilizado se encuentra a continuación:  
 ```java
 BufferedReader br = new BufferedReader(new InputStreamReader(c.getInputStream())); 
 String inputLine;
@@ -226,8 +241,43 @@ En el código anterior se observa como se crea un objeto JSONObject y postrerior
  + "        </div>    \n"
  + "   </header>");
 ```
- 
-## 7. Identificación del servidor usado como prototipo y detalles de las pruebas realizadas
+## 7. Interacción del código JavaScript con los servlets por AJAX
+
+## 8 Inserción de las informaciones en las páginas
+
+## 9. Anotaciones de accesos (logs) 
+Con motivo de tener un registro de toda la información sobre el funcionamiento de la aplicación se han rescatado los logs para implementarlos a modo de filtro. Para lograrlo se ha creado un serlet Log.java que cuenta con un método doFilter(), en el cual se registra cada solicitud en un archivo log, asegurandose de que el archivo existe y abriendolo de forma en que no se sobreescriba la información anterior. Posteriormente permite que la solicitud continue su correcto procesamiento.  
+
+A continuación se muestra el código clave: 
+
+```
+public void init(FilterConfig fConfig) throws ServletException {
+		logPath = fConfig.getServletContext().getInitParameter("logFile");
+	}
+
+public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+		File file1 = new File(logPath);
+		HttpServletRequest req = (HttpServletRequest) request;
+		if (file1.createNewFile()) {
+            System.out.println("Se ha creado el archivo log correctamente.");
+        } else {
+            System.out.println("El archivo log ya existe.");
+        }
+		
+		PrintWriter out2 = new PrintWriter(new FileOutputStream(new File(logPath),true));
+    	
+		out2.println(req.getRemoteHost() + " -- " +  req.getRemoteAddr() + " -- " + req.getRemoteUser() + " -- " + LocalDateTime.now() + " -- " + req.getMethod() + " -- " + req.getRequestURL()); 
+		out2.close();
+		chain.doFilter(request, response);
+	}
+```
+
+
+
+## 10. Fotos 
+
+
+## 8. Identificación del servidor usado como prototipo y detalles de las pruebas realizadas
 Servidor usado como prototipo: dew.cgarmon1.2324.dsicv.upv.es  
 En el servidor mencionado anteriormente se han realizado las siguientes pruebas: 
 - Prueba del alumno PEPE-> usuario: pepe, contraseña: 123456
@@ -251,7 +301,7 @@ Antes de proceder con el desarrollo completo se hicieron algunas pruebas previas
 ![image](https://github.com/hikigaya5/proyectoDEW/assets/132065179/0d7759e8-531d-43d5-ac26-c68390261db1)
 
 
-## 8. Referencias y código citado  
+## 9. Referencias y código citado  
 Para la realización de este proyecto se han consultado diferentes documentos y páginas web  
 - Documentación del trabajo "NOL_Especificación_Trajao2324f.docx": https://poliformat.upv.es/access/content/group/GRA_11610_2023/Trabajo%20en%20Grupo/NOL_Especificacion_Trabajo2324_v2.pdf
 - Centrar texto en página principal: https://getbootstrap.esdocu.com/docs/5.1/utilities/text/
