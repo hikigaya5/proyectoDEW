@@ -23,11 +23,11 @@
 5. Interpretación de las respuestas de CentroEducativo  
 6. Construcción y retorno de las páginas HTML de respuesta
 7. Interacción del código JavaScript con los servlets por AJAX
-8. Interaacciones Implementadas
-10. Inserción de las informaciones en las páginas¿?
-11. Explicación de las anotaciones de accesos (logs)
-12. Identificación del servidor usado como prototipo y detalles de las pruebas realizadas
-13. Referencias y código citado
+8. Inserción de las informaciones en las páginas
+9. Anotaciones de accesos (logs)
+10. Fotos
+11. Identificación del servidor usado como prototipo y detalles de las pruebas realizadas
+12. Referencias y código citado
 
 ## 1. Página de entrada y enlace a la operación  
 Para la realización de la página de entrada a la aplicación Notas Online (login.html) se ha utilizado "Bootstrap 5", concretamente se ha utilizado el tema "Flatly" de Bootswatch. Para poder hacer uso de este tema se importa en la cabecera del HTML como si de una hoja de estilo se tratara:  
