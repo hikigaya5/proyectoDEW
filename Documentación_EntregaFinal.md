@@ -308,6 +308,10 @@ En el servidor mencionado anteriormente se han realizado las siguientes pruebas:
 - Prueba del alumno MIGUEL-> usuario: miguel, contraseña: 123456
 - Prueba del alumno LAURA-> usuario: laura, contraseña: 123456
 - Prueba del alumno MINERVA-> usuario: minerva, contraseña: 123456
+- Prueba del alumno RAMON-> usuario: ramon, contraseña: 123456
+- Prueba del alumno PEDRO-> usuario: pedro, contraseña: 123456
+- Prueba del alumno MANOLI-> usuario: manoli, contraseña: 123456
+- Prueba del alumno JOAN-> usuario: joan, contraseña: 123456
 
 Antes de proceder con el desarrollo completo se hicieron algunas pruebas previas para comprobar que la autenticación web y el login con CentroEducativo se hacían correctamente. Posteriormente se procedió al desarrollo completo de los aspectos de la aplicación solicitados para la entrega del Hito2.
 
@@ -332,5 +336,271 @@ Para la realización de este proyecto se han consultado diferentes documentos y 
 - Consultas sobre como realizar el HashMap: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/HashMap.html
 - Consultas sobre como mantener la sesión: https://stackoverflow.com/questions/36892140/how-to-handle-https-url-that-ends-up-plaintext-connection
 
+## 10. ANEXO (actas)
+
+### ACTA 1
+
+ACTA REUNIÓN 1
+Preámbulo
+FECHA: 23/04/2024
+IDENTIFICADOR DE GRUPO: Grupo 3ti12_g6
+TIPO DE REUNIÓN: Videoconferencia por DISCORD
+ASISTENCIA:
+- Celia García Monforte
+- Anas El Hani Marouane
+- Manrique Marco Ases
+- Pablo Parra Sánchez
+- Sergio Sánchez Temporal
+- Nabil, Youssefi
+- Hugo Navarro ALUMNO FIRMANTE DEL DOCUMENTO: Celia García Monforte
+
+Resumen de la reunión
+En esta primera reunión se ha establecido el primer contacto entre los miembros del grupo y se han aportado los medios de contacto y otros elementos a discutir sobre la comunicación y reuniones futuras que es especificarán más adelante en este documento. Además se ha realizado una breve explicación por parte de cada miembro del equipo al resto de los componentes sobre el apartado del documento "Aspectos esenciales para el trabajo en equipo" que el alumno ha seleccionado con el objetivo de conocer la capacidad de comunicación de cada uno de los miembros del equipo.
+
+Puntos de la reunión
+Presentación y aportación de medios de comunicación
+Decisión de una reserva periódica para las reuniones
+Decisión sobre el depósito de materiales
+Debate sobre las reglas que deben cumplir los miembros del equipo
+Especificación de las exepctativas de los miembros
+Exposición de los apartados sobre el documento "Aspectos esenciales para el trabajo en equipo" de cada uno de los miembros
+1. Presentación y aportactión de medios de comunicación
+Todos los miembros del grupo se han presentado y forman parte del grupo de WhatsApp, que es la forma elegida para la comunicación entre los miembros del grupo.
+
+2. Decisión de una reserva reriódica para las reuniones
+Se ha decidido entre los miembros del grupo que se realizarán reuniones presenciales los martes a las 17:00h. Además, en caso de que hiciera falta alguna reunion extra se ha decidido hacer reuniones por Discord.
+
+3. Decisión sobre el depósito de materiales
+Se ha decidido utilizar "GitHub" como depósito de materiales y control de versiones.
+
+4. Debate sobre las reglas que deben cumplir los miembros del equipo
+Como reglas se ha establecido que todos los miembros del equipo deben de cumplir con los plazos establecidos por el propio equipo para desarrollar los hitos. Además, se ha de asisitir a la mayor cantidad de reuniones posibles.
+
+5. Especificación de las expectativas de los miembros
+Tras debatir nuestras expectativas, todos los miembros del grupo aspiran a obtener la mejor calificación posible.
+
+6. Exposición de los apartados sobre el documento "Aspectos esenciales para el trabajo en equipo" de cada uno de los miembros
+Celia realizó la exposición sobre la Agrupación 2: Apartados "Expectativas, Brainstorming". El resto de miembros considera que se comunica con facilidad y tiene clara la idea que expresa.
+
+Anas realizó la exposición sobre la Agrupación 3: Apartados "Conflictos, Gestión de Conflictos. El resto de miembros considera que se expresa de forma clara y precisa.
+
+Manrique realizó la exposición sobre la Agrupación 1: Apartados "Comunicación, Objetivos, Resolución de problemas". El resto de miembros considera que su exposicion ha sido muy fácil de comprender y amena.
+
+Pablo realizó la exposición sobre la Agrupación 2: Apartados "Expectativas, Brainstorming".El resto de miembros considera que fue muy facil comprender su exposición.
+
+Sergio realizó la exposición sobre la Agrupación 2: Apartados "Expectativas, Brainstorming".El resto de miembros considera que se expresa con soltura y expresa sus ideas con claridad.
+
+Nabil realizó la exposición sobre la Agrupación 3: Apartados "Conflictos, Gestión de Conflictos. El resto de miembros considera que la exposición fue fluida y fácil de entender.
+
+Hugo realizó la exposición sobre la Agrupación 1: Apartados "Comunicación, Objetivos, Resolución de problemas". El resto de miembros considera que tenia facilidad a la hora de expresarse.
+
+
+### ACTA 2 
+
+ACTA REUNIÓN
+Preámbulo
+FECHA: 30/04/2024
+IDENTIFICADOR DE GRUPO: Grupo 3ti12_g6
+TIPO DE REUNIÓN: Videoconferencia por DISCORD
+ASISTENCIA:
+- Celia García Monforte
+- Anas El Hani Marouane
+- Manrique Marco Ases
+- Pablo Parra Sánchez
+- Sergio Sánchez Temporal
+- Nabil, Youssefi
+- Hugo Navarro
+ALUMNO FIRMANTE DEL DOCUMENTO: Celia García Monforte
+
+Resumen de la reunión
+En esta primera reunión se han repartido las diferentes tareas a entregar en el hito1.
+
+Puntos de la reunión
+Selección de la tarea a realizar por cada miembro del equipo
+1. Selección de la tarea a realizar por cada miembro del equipo
+Se ha decidido repartir las tareas de la siguiente forma:
+
+Log0 + Formulario correspondiente: Anas y Nabil
+Log1 + Formulario correspondiente: Hugo y Sergio
+Log2 + Formulario correspondiente: Pablo
+Shell Scrpit curls: Celia y Manrique 
+
+### ACTA 3
+ACTA REUNIÓN
+Preámbulo
+FECHA: 6/05/2024
+IDENTIFICADOR DE GRUPO: Grupo 3ti12_g6
+TIPO DE REUNIÓN: Videoconferencia por DISCORD
+ASISTENCIA:
+- Celia García Monforte
+- Anas El Hani Marouane
+- Manrique Marco Ases
+- Pablo Parra Sánchez
+- Sergio Sánchez Temporal
+- Nabil, Youssefi
+- Hugo Navarro
+ALUMNO FIRMANTE DEL DOCUMENTO: Celia García Monforte
+
+Resumen de la reunión
+En esta reunión se han puesto en común y se han revisado todas las tareas a entregar en el Hito 1. A continuación se detallarán los aspectos a explicar sobre los entregables del Hito 1.
+
+Puntos del acta
+Información sobre como utilizar los formularios que interactuarán con los servlets log0, log1, log2
+Documentación que pudiera necesitar un usuario de la aplicación resultante (consulta de logs, ubicación de ficheros generados...)
+Explicación de cada una de las órdenes "curl"
+1. Información sobre como utilizar los formularios que interactuarán con los servlets log0, log1, log2
+Los servlets log0, log1 y log2 son componentes Java diseñados para manejar solicitudes HTTP y registrar información del cliente en un archivo de registro, están diseñados para interactuar con formularios HTML para capturar los datos del usuario y procesarlos. El formulario deberá tener un elemento "form" tal que:
+
+ <form action="/path/LogX" method="get">
+Además deberá contener los elementos necesarios para recoger la información que el usuario proporciona etiquetados como "usuario" y "pass".
+Lo primero que obtiene el cliente es una página HTML en la que aparecen los enlaces a los formularios que comprueban cada Log.
+
+Al clicar en el enlace "Log0" aparece un formulario en el que deberá rellenar usuario y contraseña. Tras enviar el formulario aparecerá un HTML con la información del cliente (nombre de usuario y contraseña), la fecha actual, la URI y el método HTTP.
+Al clicar en el encade "Log1" aparece el mismo formulario que anteriormente que, además de realizar las acciones llevadas a cabo por log0, escribirá esos mismos datos en un archivo de registro.
+Al clicar en el enlace "Log2", tras realizar las mismas acciones que en los formularios anteriores, el servlet obtendrá la ruta del archivo de registro de un parámetro de inicialización del contexto llamado "logFile" empleando web.xml.
+2. Documentación que pudiera necesitar un usuario de la aplicación resultante (consulta de logs, ubicación de ficheros generados...)
+A continuación se muestra la ubicación de los logs dentro del proyecto
+image
+Por último, indicar que el archivo de registro en el que se escriben los datos al completar el formulario tanto del Log1 como del Log2 se encuentran en /home/user/Documentos/resultado.txt
+
+3. Explicación de cada una de las ordenes "curl"
+Se ha realizado la siguiente secuencia de órdenes para interactuar con CentroEducativo v2.0 (leer+modificar+leer):
+
+Login del usuario: Se ha guardado en la variable KEY la clave otorgada como resultado de esta orden, de esa forma podrá pasarse como parámetro a las órdenes siguientes que interactuen con CentroEducativo, "cucu" representa el fichero donde se guardarán las cookies. Tanto la KEY como el fichero con las cookies son necesarios para poder "mantener la sesión" e interacturar con CentroEducativo. Los parámetros necesarios se indican en formato JSON.
+
+KEY=$(curl -s --data '{"dni":"23456733H","password":"123456"}'  -X POST -H "content-type: application/json" http://dew-cgarmon1-2324.dsicv.upv.es:9090/CentroEducativo/login  -c cucu -b cucu) 
+
+Leer todos los alumnos de CentroEducativo: Se pasa la clave necesaria mediante la variable KEY.
+
+curl -s -X GET 'http://dew-cgarmon1-2324.dsicv.upv.es:9090/CentroEducativo/alumnos?key='$KEY -H "accept: application/json" -c cucu -b cucu
+
+Modificar un alumno de CentroEducativo: Los parámetros necesarios se indican en formato JSON. La modificación puede realizarse mediante el método POST o mediante el método PUT. Aunque le método PUT es el que mejor representa una operación de actualización hoy en dia se encuentra en desuso. A continuación se muestran ambas opciones:
+
+curl -s  --data '{“apellidos”:”Fernándex”, "dni":"222222222H",”nombre”:”Maria”, "password":"123456"}' -X POST -H”content-type: application/json” http://dew-cgarmon1-2324.dsicv.upv.es:9090/CentroEducativo/alumnos?key='$KEY\ -c cucu -b cucu
+
+curl -s --data '{“apellidos”:”Fernándex”, "dni":"222222222H",”nombre”:”Maria”, "password":"123456"}' -X PUT -H "content-type: application/json" http://dew-cgarmon1-2324.dsicv.upv.es:9090/CentroEducativo/alumnos?key='$KEY -c cucu -b cucu
+
+Lectura de la información del alumno modificado: Por último, obtenemos únicamente el alumno sobre el cual hemos realizado la modificación. Los parámetros necesarios se indican en formato JSON.
+
+curl -s --data '{"dni":"222222222H"}' -X GET 'http://dew-cgarmon1-2324.dsicv.upv.es:9090/CentroEducativo/alumnos/?key='$KEY -H "accept: application/json" -c cucu -b cucu  `
+
+### ACTA 4
+
+ACTA REUNIÓN
+Preámbulo
+FECHA: 17/05/2024
+IDENTIFICADOR DE GRUPO: Grupo 3ti12_g6
+TIPO DE REUNIÓN: Videoconferencia por DISCORD
+ASISTENCIA:
+- Celia García Monforte
+- Anas El Hani Marouane
+- Manrique Marco Ases
+- Pablo Parra Sánchez
+- Sergio Sánchez Temporal
+- Nabil, Youssefi
+- Hugo Navarro
+ALUMNO FIRMANTE DEL DOCUMENTO: Celia García Monforte
+
+Resumen de la reunión
+En esta reunión se han revisado todas las tareas a realizar para el Hito 2. A continuación se detallarán los aspectos debatidos en la reunión.
+
+Puntos del acta
+Reparto de las Tareas a realizar para el Hito 2.
+1. Reparto de las Tareas a realizar para el Hito 2
+Se ha decidido que cada miembro se enfoque en uno de los aspectos a realizar para el Hito2 de forma que investigue como desarrollar la tarea para posteriormente comunicarlo al resto del equipo y desarrollar el trabajo:
+
+Pagina de entrada y enlace a la operación: Celia García
+Autenticación web: Pablo Parra
+Login con CentroEducativo y mantenimiento de la sesión (no es necesariamente un paso separado): Sergio Sánchez y Hugo Navarro
+Construcción y envío de las peticiones a CentroEducativo: Nabil Youssefi
+Interpretación de las respuestas de CentroEducativo: Anas El Hani
+Construcción y retorno de las páginas HTML de respuesta: Manrique Marco
+
+### ACTA 5
+
+ACTA REUNIÓN
+Preámbulo
+FECHA: 23/05/2024
+IDENTIFICADOR DE GRUPO: Grupo 3ti12_g6
+TIPO DE REUNIÓN: Videoconferencia por DISCORD
+ASISTENCIA:
+- Celia García Monforte
+- Anas El Hani Marouane
+- Manrique Marco Ases
+- Pablo Parra Sánchez
+- Sergio Sánchez Temporal
+- Nabil, Youssefi
+- Hugo Navarro Chiner
+ALUMNO FIRMANTE DEL DOCUMENTO: Celia García Monforte
+
+Resumen de la reunión
+En esta reunión se han puesto en común y se han revisado todas las tareas a entregar en el Hito 2.
+
+Puntos del acta
+Descripción del estado actual del proyecto
+Descripción del estado actual del grupo
+Indentificador del servidor usado como prototipo y detalles de las pruebas realizadas.
+1. Descripción del estado actual del proyecto
+Se ha realizado la revisión de todos los elementos a entregar en el Hito 2 y todas las pruebas funcionan correctamente. Se ha realizado, además, la documentación correspondiente al proyecto.
+
+2. Descripción del estado actual del grupo
+Actualmente el equipo está funcionando perfectamente, todos los miembros del grupo están implicados en el trabajo, se concetan a las reuniones que hace el grupo y cumplen con todo aquello que se pone como objetivos individuales. Respecto a las expectativas del equipo, todos los miembros coinciden en que se busca obtener la máxima calificación posible.
+
+3. Identificación del servidor usado como prototipo y detalles de la prueba realizada
+Servidor usado como prototipo: dew.cgarmon1.2324.dsicv.upv.es
+En el servidor mencionado anteriormente se han realizado las siguientes pruebas:
+
+Prueba del alumno PEPE-> usuario: pepe, contraseña: 123456
+Prueba del alumno MARIA-> usuario: maria, contraseña: 123456
+Prueba del alumno MIGUEL-> usuario: miguel, contraseña: 123456
+Prueba del alumno LAURA-> usuario: laura, contraseña: 123456
+Prueba del alumno MINERVA-> usuario: pepe, contraseña: 123456
+Antes de proceder con el desarrollo completo se hicieron algunas pruebas previas para comprobar que la autenticación web y el login con CentroEducativo se hacian correctamente. Posteriormente se procedió al desarrollo completo de los aspectos de la aplicación solicitados para la entrega del Hito2
+
+Página principal de la aplicación
+
+![333354972-60e80c7b-3a7e-4adb-b91a-21faa28288ec](https://github.com/hikigaya5/proyectoDEW/assets/132065179/18743900-572e-429c-ac0a-194edd5b2e23)
+
+Login de un alumn@
+![333355885-a451bda6-7fd1-41df-b5a3-f8fb50f60afb](https://github.com/hikigaya5/proyectoDEW/assets/132065179/47c9532b-068e-4b76-a508-490d4e7433af)
+
+
+Página que muestra la lista de asignaturas de un alumn@ concreto cuando hace el login
+![333355425-c1fa6aee-009c-47f8-9ccc-15d306312a1d](https://github.com/hikigaya5/proyectoDEW/assets/132065179/f656ce5b-a313-4516-8a51-6d87623753e3)
+
+
+Página que muestra la nota de un alumn@ en una asignatura concreta
+![333363814-0d7759e8-531d-43d5-ac26-c68390261db1](https://github.com/hikigaya5/proyectoDEW/assets/132065179/ec113104-b2e5-479b-86d2-157703453fed)
+
+### ACTA 7
+
+ACTA REUNIÓN
+Preámbulo
+FECHA: 17/05/2024
+IDENTIFICADOR DE GRUPO: Grupo 3ti12_g6
+TIPO DE REUNIÓN: Videoconferencia por DISCORD
+ASISTENCIA:
+- Celia García Monforte
+- Anas El Hani Marouane
+- Manrique Marco Ases
+- Pablo Parra Sánchez
+- Sergio Sánchez Temporal
+- Nabil, Youssefi
+- Hugo Navarro
+ALUMNO FIRMANTE DEL DOCUMENTO: Celia García Monforte
+
+Resumen de la reunión
+En esta reunión se han revisado todas las tareas a realizar para el Hito 2. A continuación se detallarán los aspectos debatidos en la reunión.
+
+Puntos del acta
+Reparto de las Tareas a realizar para el Hito Final.
+1. Reparto de las Tareas a realizar para el Hito 2
+Se ha decidido que cada miembro se enfoque en uno de los aspectos a realizar para la entrega final de forma que investigue como desarrollar la tarea para posteriormente comunicarlo al resto del equipo y desarrollar el trabajo:
+
+AJAX: Sergio y Manrique
+Vistas : Celia
+Certificado + Restricciones de Seguridad: Pablo
+Servlet Mostrar Asignaturas de Profesor: Anas y Nabil
+Servlet Detalles de un alumno + cambiar nota desde detalles: Hugo
 
 
