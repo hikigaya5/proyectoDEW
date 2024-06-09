@@ -273,8 +273,32 @@ public void doFilter(ServletRequest request, ServletResponse response, FilterCha
 ```
 
 ## 10. Fotos 
-En esta aplicación se trata con las imagenes de los alumnos
+En esta aplicación se trata con las imagenes de los alumnos para mostrarlas tanto en la vista del profesor como en el certificado de nota solicitado por el alumno. Con el fin de que ningun usuario pueda acceder a las fotos de otro usuario se ha procedido a almacenar las fotos en el directorio /user/tomcat y dentro de la carpeta "fotos" se ha creado una subcarpeta denominada users donde se encuentrar las fotos que se utilizan. 
 
+Para poder acceder a las fotos se hace uso de un servlet llamado Fotos.java en el cual se lee un archivo que contiene una imagen codificada en base64 correspondiente al DNI del alumno y envía su contenido en formato JSON en la respuesta HTTP. En caso de que intente acceder a la foto una persona cuyo DNI no coincide lanza una excepción. 
+
+Código:  
+```java
+protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String dni = request.getParameter("dni");
+		String dnir = request.getSession().getAttribute("dni").toString();
+		if(dni.equals(dnir)) {
+		String ruta = getServletContext().getInitParameter("directorioFotos");
+		response.setContentType("text/plain");
+		response.setCharacterEncoding("UTF-8");
+		BufferedReader origen = new BufferedReader(new FileReader(ruta+"/"+dni+".pngb64"));
+		PrintWriter out = response.getWriter();
+		out.print("{\"dni\": \"" + dni + "\", \"img\": \"");
+		String linea = origen.readLine(); out.print(linea);
+		while((linea=origen.readLine()) != null) {out.print("\n" + linea);}
+		out.print("\"}");
+		origen.close(); out.close();
+		}
+		else {
+			throw new ServletException("La foto que intenta obtener no corresponde a su usuario.");
+		}
+	}
+```
 ## 8. Identificación del servidor usado como prototipo y detalles de las pruebas realizadas
 Servidor usado como prototipo: dew-cgarmon1-2324.dsicv.upv.es  
 En el servidor mencionado anteriormente se han realizado las siguientes pruebas: 
@@ -282,7 +306,7 @@ En el servidor mencionado anteriormente se han realizado las siguientes pruebas:
 - Prueba del alumno MARIA-> usuario: maria, contraseña: 123456
 - Prueba del alumno MIGUEL-> usuario: miguel, contraseña: 123456
 - Prueba del alumno LAURA-> usuario: laura, contraseña: 123456
-- Prueba del alumno MINERVA-> usuario: pepe, contraseña: 123456
+- Prueba del alumno MINERVA-> usuario: minerva, contraseña: 123456
 
 Antes de proceder con el desarrollo completo se hicieron algunas pruebas previas para comprobar que la autenticación web y el login con CentroEducativo se hacían correctamente. Posteriormente se procedió al desarrollo completo de los aspectos de la aplicación solicitados para la entrega del Hito2.
 
